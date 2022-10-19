@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/animations.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/inputs.css">
+    <link rel="stylesheet" href="index.css">
     <title>Petinfo - Login</title>
 </head>
+
 <body>
-    <main></main>
+    <main class="login-container">
+
+        <section class="left-content">
+
+            <h1>Petinfo</h1>
+            <h2><span class="blue-text">Amor</span> e <span class="blue-text">carinho</span> por meio do conhecimento
+            </h2>
+            <p>Todas as informações para melhorar a vida do seu pet em um só lugar</p>
+            <img src="../../img/img-login.svg" alt="pets collection">
+
+        </section>
+
+        <section class="right-content">
+
+            <h3>Login</h3>
+
+            <form>
+
+                <label class="default-label" for="username">Usuário</label>
+                <input class="default-input" type="text" name="username" id="username" placeholder="Digite seu usuário aqui">
+
+                <label class="default-label" for="password">Senha</label>
+                <input class="default-input" type="password" name="password" id="password" placeholder="Digite sua senha aqui">
+
+                <p class="error-message">A senha está incorreta</p>
+                <button type="submit" class="primary-btn">Acessar</button>
+                
+            </form>
+
+            <h5>Ainda não possui conta?</h5>
+            <span>Clicando no botão abaixo, você pode se cadastrar rapidamente</span>
+            <button type="button" class="outline-btn">Cadastrar</button>
+
+        </section>
+
+    </main>
     <script type="module" src="index.js"></script>
 </body>
+
 </html>

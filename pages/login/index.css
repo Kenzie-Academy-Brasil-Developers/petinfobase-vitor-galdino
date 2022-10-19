@@ -1,1 +1,91 @@
-/* Desenvolva a estilização da sua página aqui */
+.blue-text {
+    color: var(--brand100);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.left-content {
+    width: 391px;
+}
+
+.left-content h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--gray100);
+}
+
+.left-content h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 150%;
+    color: var(--gray100);
+    margin: 1.5rem 0;
+}
+
+.left-content p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray300);
+    margin-bottom: 24px;
+}
+
+.right-content {
+    width: 368px;
+    padding: 2.75rem 1.5rem;
+    background-color: #fcfeff;
+    border: 1px solid var(--gray600);
+    border-radius: var(--radius-1);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.right-content h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--gray100);
+}
+
+.right-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content label {
+    margin-bottom: .75rem;
+}
+
+.right-content form input:nth-child(2) {
+    margin-bottom: 26px;
+}
+
+.right-content form .error-message {
+    margin-top: 16px;
+}
+
+.right-content form button {
+    margin-top: 26px;
+}
+
+.right-content h5 {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--gray100);
+    align-self: center;
+}
+
+.right-content span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray300);
+    text-align: center;
+}
