@@ -1,0 +1,38 @@
+.default-label {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--gray100);
+}
+
+.default-input {
+    background-color: var(--gray800);
+    border: 1px solid var(--gray600);
+    border-radius: var(--radius-1);
+    padding: 0 1rem;
+    height: 2.75rem;
+    color: var(--gray100);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.default-input::placeholder {
+    color: var(--gray400);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.default-input:focus {
+    outline: 1px solid var(--gray100);
+    background-color: var(--gray900);
+}
+
+.input-error {
+    background-color: var(--gray800);
+    outline: 1px solid var(--alert100);
+}
+
+.error-message {
+    font-weight: 400;
+    font-size: .875rem;
+    color: var(--alert100);
+}
