@@ -123,3 +123,24 @@
     animation: spinner 1.2s cubic-bezier(0.58, 0.75, 1, 1) infinite;
 }
 
+.exit-btn {
+    height: 62px;
+    border: none;
+    background-color: #FCFEFF;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: var(--font-family-1);
+    color: var(--gray400);
+    background-image: url(../img/sign-out-alt.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 17px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.exit-btn:is(:hover, :focus) {
+    background-color: var(--gray700);
+    color: var(--gray100);
+    background-image: url(../img/sign-out-active.svg);
+}
