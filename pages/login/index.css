@@ -89,3 +89,10 @@
     color: var(--gray300);
     text-align: center;
 }
+
+.right-content a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
