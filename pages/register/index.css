@@ -61,6 +61,14 @@ a {
     margin-bottom: 26px;
 }
 
+.left-content form input:nth-child(8) {
+    margin-bottom: 12px;
+}
+
+.left-content form .register-access {
+    margin-top: 12px;
+}
+
 .right-content {
     width: 330px;
 }
