@@ -95,6 +95,7 @@
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .link:is(:hover, :focus) {
@@ -139,8 +140,26 @@
     transition: all .3s;
 }
 
-.exit-btn:is(:hover, :focus) {
+.exit-btn:hover {
     background-color: var(--gray700);
     color: var(--gray100);
     background-image: url(../img/sign-out-active.svg);
+}
+
+.close-btn {
+    width: 38px;
+    height: 32px;
+    padding: 4px 14px;
+    background-color: #E9ECEF;
+    border-radius: var(--radius-1);
+    border: none;
+    background-image: url(../img/X.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.close-btn:hover {
+    background-color: #e9ecefd5;
 }
