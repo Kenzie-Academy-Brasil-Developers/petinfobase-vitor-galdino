@@ -1,4 +1,5 @@
-import { Login } from "../../scripts/login.js";
+import { Api } from "../../scripts/apiRequests.js";
+import { Global } from "../../scripts/globalScripts.js";
 
-Login.checkInputs();
-Login.getFormValues();
+Global.checkInputs(".default-input", ".login-access", 0);
+Global.getFormValues(".login-access", Api.loginRequest, "login");
