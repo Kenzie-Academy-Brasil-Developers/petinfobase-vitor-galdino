@@ -1,1 +1,4 @@
-/* Desenvolva seu código aqui */
+import { Login } from "../../scripts/login.js";
+
+Login.checkInputs();
+Login.getFormValues();
