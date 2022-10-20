@@ -1,3 +1,5 @@
+import { LocalStorage } from "./localStorage.js";
+
 const baseUrl = "http://localhost:3333/"
 
 class Api {
@@ -17,7 +19,7 @@ class Api {
                 localStorage.setItem("userToken", JSON.stringify(response));
 
                 setTimeout(() => {
-                    location.replace("../home/index.html");
+                    location.assign("../home/index.html");
                 }, 2500);
                 return request.ok;
             } else {
@@ -25,8 +27,73 @@ class Api {
             }
 
         } catch (err) {
-            console.log(err)
+            console.log(err);
             return false;
+        }
+    }
+
+    static async registerRequest(body) {
+        try {
+            const request = await fetch(`${baseUrl}users/create`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(body)
+            });
+
+            if (request.ok) {
+
+                setTimeout(() => {
+                    location.assign("../login/index.html");
+                }, 2500);
+
+                return request.ok;
+            } else {
+                throw new Error(request.status + " " + request.statusText);
+            }
+
+        } catch (err) {
+            console.log(err);
+            return false;
+        }
+    }
+
+    static async getUserInfo() {
+        try {
+            const request = await fetch(`${baseUrl}users/profile`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${LocalStorage.getUserToken()}`,
+                }
+            });
+
+            const response = await request.json();
+            localStorage.setItem("userId", JSON.stringify(response.id));
+
+            return response;
+
+        } catch (err) {
+            console.log(err);
+            return err;
+        }
+    }
+
+    static async getPosts() {
+        try {
+            const request = await fetch(`${baseUrl}posts`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${LocalStorage.getUserToken()}`,
+                }
+            });
+
+            const response = await request.json();
+            return response;
+
+        } catch (err) {
+            console.log(err);
+            return err;
         }
     }
 }
