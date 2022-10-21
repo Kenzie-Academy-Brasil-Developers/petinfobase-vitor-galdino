@@ -1,6 +1,6 @@
 import { Message } from "./warningsMessage.js";
 
-export class Global {
+export class Form {
 
     static checkInputs(inputClass, submitClass, emailPosition) {
         const inputs = document.querySelectorAll(inputClass);

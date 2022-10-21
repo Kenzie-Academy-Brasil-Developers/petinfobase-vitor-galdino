@@ -1,5 +1,5 @@
 import { Api } from "../../scripts/apiRequests.js";
-import { Global } from "../../scripts/globalScripts.js";
+import { Form } from "../../scripts/form.js";
 
-Global.checkInputs(".default-input", ".register-access", 1);
-Global.getFormValues(".register-access", Api.registerRequest, "register");
+Form.checkInputs(".default-input", ".register-access", 1);
+Form.getFormValues(".register-access", Api.registerRequest, "register");
