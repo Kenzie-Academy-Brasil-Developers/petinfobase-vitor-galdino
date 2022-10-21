@@ -23,6 +23,6 @@ export class Toast {
             <p>O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed </p>
         </div>
         `);
-        setTimeout(() => document.querySelector(".toast").remove(), 2500);
+        setTimeout(() => document.querySelector(".toast").remove(), 3000);
     }
 }
