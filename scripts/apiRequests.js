@@ -20,7 +20,7 @@ class Api {
                 localStorage.setItem("userToken", JSON.stringify(response));
 
                 setTimeout(() => {
-                    location.href = "../home/index.html";
+                    location.replace("../home/index.html");
                 }, 2500);
                 return request.ok;
             } else {
@@ -46,7 +46,7 @@ class Api {
             if (request.ok) {
                 Toast.successCreateAccount();
                 setTimeout(() => {
-                    location.href = "../login/index.html";
+                    location.replace("../login/index.html");
                 }, 2500);
 
                 return request.ok;

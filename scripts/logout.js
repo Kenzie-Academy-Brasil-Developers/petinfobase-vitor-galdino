@@ -4,7 +4,7 @@ export class Logout {
 
         button.onclick = () => {
             localStorage.clear();
-            location.assign("../login/index.html");
+            location.replace("../login/index.html");
         }
     }
 }
