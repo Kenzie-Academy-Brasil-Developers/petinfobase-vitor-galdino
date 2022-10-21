@@ -60,6 +60,28 @@ class Api {
         }
     }
 
+    static async createNewPost(body) {
+        try {
+            const request = await fetch(`${baseUrl}posts/create`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                    Authorization: `Bearer ${LocalStorage.getUserToken()}`,
+                },
+                body: JSON.stringify(body),
+            });
+
+            if (request.ok) {
+                return request.ok;
+            } else {
+                throw new Error(request.status + " " + request.statusText);
+            }
+        } catch (err) {
+            console.log(err);
+            return false;
+        }
+    }
+
     static async getUserInfo() {
         try {
             const request = await fetch(`${baseUrl}users/profile`, {
@@ -95,6 +117,48 @@ class Api {
         } catch (err) {
             console.log(err);
             return err;
+        }
+    }
+
+    static async updatePost(body, idPost) {
+        try {
+            const request = await fetch(`${baseUrl}posts/${idPost}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${LocalStorage.getUserToken()}`,
+                },
+                body: JSON.stringify(body),
+            });
+
+            if (request.ok) {
+                return request.ok;
+            } else {
+                throw new Error(request.status + " " + request.statusText);
+            }
+
+        } catch (err) {
+            console.log(err);
+            return false;
+        }
+    }
+
+    static async deletePost(idPost) {
+        try {
+            const request = await fetch(`${baseUrl}posts/${idPost}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json",
+                    Authorization: `Bearer ${LocalStorage.getUserToken()}`,
+                }
+            });
+
+            if (request.ok) return request.ok;
+            else throw new Error(request.status + " " + request.statusText);
+
+        } catch (err) {
+            console.log(err);
+            return false;
         }
     }
 }
