@@ -1,4 +1,5 @@
 import { LocalStorage } from "./localStorage.js";
+import { Toast } from "./toast.js";
 
 const baseUrl = "http://localhost:3333/"
 
@@ -43,7 +44,7 @@ class Api {
             });
 
             if (request.ok) {
-
+                Toast.successCreateAccount();
                 setTimeout(() => {
                     location.assign("../login/index.html");
                 }, 2500);
