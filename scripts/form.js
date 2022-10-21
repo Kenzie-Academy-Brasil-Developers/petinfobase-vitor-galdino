@@ -1,18 +1,18 @@
 import { Message } from "./warningsMessage.js";
+import { RenderHomePage } from "./renders.js";
 
 export class Form {
 
-    static checkInputs(inputClass, submitClass, emailPosition) {
+    static checkInputs(inputClass, submitClass, buttonAmount = 1) {
         const inputs = document.querySelectorAll(inputClass);
         const submit = document.querySelector(submitClass);
         const form = document.querySelector("form");
-        const elem = [...form.elements].slice(0, -1);
+        const elem = [...form.elements].slice(0, -buttonAmount);
 
         inputs.forEach((input) => {
             input.oninput = () => {
                 elem.forEach((elem) => {
-
-                    if (elem.value && inputs[emailPosition].value.includes("@" && ".")) {
+                    if (elem.value) {
                         submit.disabled = false;
                     } else {
                         submit.disabled = true;
@@ -47,6 +47,30 @@ export class Form {
                 submit.classList.remove("loading");
 
                 Message.showErrorMessage(submit, local);
+            }
+        }
+    }
+
+    static getModalFormValues(apiCallback, id = undefined) {
+        const modal = document.querySelector(".modal");
+        const form = document.querySelector("form");
+        const elem = [...form.elements]
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+
+            const body = {};
+
+            elem.forEach((input) => {
+                if (input.classList.contains("default-input")) {
+                    body[input.id] = input.value;
+                }
+            });
+
+            const apiRequest = await apiCallback(body, id);
+            if (apiRequest) {
+                RenderHomePage.posts();
+                modal.remove();
             }
         }
     }
