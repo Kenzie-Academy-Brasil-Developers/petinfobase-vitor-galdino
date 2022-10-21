@@ -36,23 +36,19 @@
                 <input class="default-input" type="email" name="email" id="email" placeholder="Digite seu email aqui">
 
                 <label class="default-label" for="password">Senha</label>
-                <input class="default-input" type="password" name="password" id="password"
-                    placeholder="Digite sua senha aqui">
+                <input class="default-input" type="password" name="password" id="password" placeholder="Digite sua senha aqui">
 
                 <button type="submit" class="primary-btn login-access" disabled>Acessar</button>
-
+                
             </form>
 
             <h5>Ainda não possui conta?</h5>
             <span>Clicando no botão abaixo, você pode se cadastrar rapidamente</span>
-            <button onclick="redirectToRegister()" class="outline-btn">Cadastrar</button>
+            <a href="../register/index.html" class="outline-btn">Cadastrar</a>
 
         </section>
 
     </main>
-    <script type="text/javascript">
-        const redirectToRegister = () => location.replace("/pages/register/index.html");
-    </script>
     <script type="module" src="index.js"></script>
 </body>
 
