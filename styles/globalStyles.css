@@ -22,6 +22,7 @@
   --alert200: hsl(349, 69%, 55%);
   --sucess100: hsl(162, 88%, 26%);
 
+  --radius-0: .5rem;
   --radius-1: .25rem;
 
   --font-family-1: 'Inter', sans-serif;
@@ -29,4 +30,8 @@
 
 body {
   font-family: var(--font-family-1);
+}
+
+li {
+  list-style: none;
 }
