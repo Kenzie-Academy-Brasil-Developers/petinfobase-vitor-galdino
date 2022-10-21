@@ -8,3 +8,15 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes showToast {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
