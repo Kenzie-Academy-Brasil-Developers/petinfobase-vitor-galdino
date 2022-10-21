@@ -1,0 +1,169 @@
+.home-container {
+    width: 800px;
+    margin: auto;
+}
+
+.main-header {
+    margin: 64px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header h1 {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--gray100);
+}
+
+.main-header ul {
+    display: flex;
+    gap: 12px;
+}
+
+.main-header li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.main-header img {
+    width: 41px;
+    height: 41px;
+    border: 1px solid var(--brand100);
+    border-radius: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.main-header img:hover+.user-options {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.main-header .user-options {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 39px;
+    right: 0;
+    width: 215px;
+    height: 117px;
+    background-color: #FCFEFF;
+    border-radius: var(--radius-1);
+    border: 1px solid var(--gray700);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: all .3s;
+}
+
+.main-header .user-options:hover {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.main-header .user-options span {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--gray100);
+    padding: 1.375rem 0 .5625rem 1.0625rem;
+}
+
+.info-bar {
+    background-color: #F8F9FA;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.info-bar h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #212529;
+}
+
+.cards-content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 64px;
+}
+
+.card {
+    width: 100%;
+}
+
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    user-select: none;
+    margin-right: 8px;
+}
+
+.user-info h4 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #212529;
+    padding-right: 12px;
+    border-right: 1px solid #E9ECEF;
+}
+
+.user-info span {
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #868E96;
+}
+
+.user-tools {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-tools button {
+    padding: 0 .5rem;
+    height: 2rem;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.card h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    color: #212529;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card p {
+    margin: 20px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray300);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
