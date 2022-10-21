@@ -1,5 +1,7 @@
 import { Api } from "./apiRequests.js";
 import { LocalStorage } from "./localStorage.js";
+import { Logout } from "./logout.js";
+import { Modal } from "./modals.js";
 
 export class RenderHomePage {
 
@@ -10,6 +12,9 @@ export class RenderHomePage {
 
         li.insertAdjacentHTML("beforeend",
             Card.profileContent(userRequest.avatar, userRequest.username));
+
+        Logout.checkhomePage(".exit-btn");
+        Modal.showCreatePost(".create-post");
     }
 
     static async posts() {
@@ -19,7 +24,7 @@ export class RenderHomePage {
         const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
         ul.innerHTML = "";
 
-        postRequest.forEach((elem, index) => {
+        postRequest.slice().reverse().forEach((elem, index) => {
 
             ul.insertAdjacentHTML("beforeend",
                 Card.postContent(
@@ -39,6 +44,10 @@ export class RenderHomePage {
                 div.insertAdjacentHTML("afterend", Card.postTools());
             }
         });
+
+        Modal.showEditPost();
+        Modal.showConfirmDeletePost();
+        Modal.showPost();
     }
 }
 
@@ -65,7 +74,7 @@ class Card {
             </div>
             <h2>${title}</h2>
             <p>${content}</p>
-            <a class="link">Acessar publicação</a>
+            <a class="link show-post">Acessar publicação</a>
         </li>
         `;
     }
@@ -73,8 +82,8 @@ class Card {
     static postTools() {
         return `
         <div class="user-tools">
-           <button class="outline-btn">Editar</button>
-           <button class="medium-btn">Excluir</button>
+           <button class="outline-btn edit-post">Editar</button>
+           <button class="medium-btn delete-post">Excluir</button>
         </div>
         `;
     }
