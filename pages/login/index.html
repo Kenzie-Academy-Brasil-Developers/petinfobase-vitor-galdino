@@ -36,10 +36,11 @@
                 <input class="default-input" type="email" name="email" id="email" placeholder="Digite seu email aqui">
 
                 <label class="default-label" for="password">Senha</label>
-                <input class="default-input" type="password" name="password" id="password" placeholder="Digite sua senha aqui">
+                <input class="default-input" type="password" name="password" id="password"
+                    placeholder="Digite sua senha aqui">
 
                 <button type="submit" class="primary-btn login-access" disabled>Acessar</button>
-                
+
             </form>
 
             <h5>Ainda não possui conta?</h5>
@@ -50,7 +51,14 @@
 
     </main>
     <script type="text/javascript">
-        console.log("test");
+        function refreshPage() {
+            if (localStorage.getItem("userToken")) {
+                console.log("reload page completed");
+                location.reload();
+            } else {
+                console.log("cant do it =(");
+            }
+        }
     </script>
     <script type="module" src="index.js"></script>
 </body>
