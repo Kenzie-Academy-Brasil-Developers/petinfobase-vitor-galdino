@@ -56,15 +56,10 @@
         </section>
     </main>
     <script type="text/javascript">
-        function refreshPage() {
-            if (localStorage.getItem("userToken")) {
-                console.log("reload page completed");
-                location.reload();
-            } else {
-                console.log("cant do it =(");
-            }
+        if (performance.navigation.type == 2) {
+            console.log("load test")
+            location.reload(true);
         }
-        refreshPage()
     </script>
     <script type="module" src="index.js"></script>
 </body>
