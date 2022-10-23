@@ -20,7 +20,7 @@
 
             <div class="user-tools">
                 <h3>Cadastro</h3>
-                <a href="../login/index.html" class="outline-btn">Voltar para o login</a>
+                <a onclick="redirectToLogin()" class="outline-btn">Voltar para o login</a>
             </div>
 
             <form>
@@ -42,7 +42,7 @@
                 <button type="submit" class="primary-btn register-access" disabled>Cadastrar</button>
             </form>
 
-            <a href="../login/index.html" class="outline-btn">Voltar para o login</a>
+            <a onclick="redirectToLogin()" class="outline-btn">Voltar para o login</a>
 
         </section>
 
@@ -56,12 +56,15 @@
         </section>
     </main>
     <script type="text/javascript">
-        let date2 = new Date()
-        console.log(date2)
-        if (performance.navigation.type == 2) {
-            console.log("load test")
-            location.reload(true);
+         function redirectToLogin() {
+            location.replace("/pages/login/");
         }
+        // let date2 = new Date()
+        // console.log(date2)
+        // if (performance.navigation.type == 2) {
+        //     console.log("load test")
+        //     location.reload(true);
+        // }
     </script>
     <script type="module" src="index.js"></script>
 </body>

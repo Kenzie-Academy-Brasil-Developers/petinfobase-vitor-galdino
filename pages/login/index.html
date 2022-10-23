@@ -45,18 +45,21 @@
 
             <h5>Ainda não possui conta?</h5>
             <span>Clicando no botão abaixo, você pode se cadastrar rapidamente</span>
-            <a href="../register/index.html" class="outline-btn">Cadastrar</a>
+            <a onclick="redirectToRegister()" class="outline-btn">Cadastrar</a>
 
         </section>
 
     </main>
     <script type="text/javascript">
-        let date2 = new Date()
-        console.log(date2)
-        if (performance.navigation.type == 2) {
-            console.log("load test")
-            location.reload(true);
+        function redirectToRegister() {
+            location.replace("/pages/register/");
         }
+        // let date2 = new Date()
+        // console.log(date2)
+        // if (performance.navigation.type == 2) {
+        //     console.log("load test")
+        //     location.reload(true);
+        // }
     </script>
     <script type="module" src="index.js"></script>
 </body>
