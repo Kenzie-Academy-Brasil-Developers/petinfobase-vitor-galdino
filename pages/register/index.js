@@ -4,7 +4,8 @@ import { Permission } from "../../scripts/permissions.js";
 
 // const refreshPage = () => localStorage.getItem("userToken") ? location.reload() : false;
 // refreshPage();
-
+let date = new Date()
+console.log(date)
 Permission.userHasToken();
 
 Form.checkInputs(".default-input", ".register-access");
